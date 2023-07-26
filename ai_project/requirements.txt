@@ -1,0 +1,29 @@
+blinker==1.6.2
+certifi==2023.7.22
+charset-normalizer==3.2.0
+click==8.1.6
+docx==0.2.4
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.5  # This version requires SQLAlchemy>=1.4.18
+idna==3.4
+itsdangerous==2.1.2
+Jinja2==3.1.2
+joblib==1.3.1
+lxml==4.9.3
+MarkupSafe==2.1.3
+mysql-connector-python==8.1.0
+nltk==3.8.1
+oauthlib==3.2.2
+Pillow==10.0.0
+protobuf==4.21.12
+python-docx==0.8.11
+regex==2023.6.3
+requests==2.31.0
+requests-oauthlib==1.3.1
+SQLAlchemy>=1.4.18  # Change this line to allow a compatible version with Flask-SQLAlchemy
+textblob==0.17.1
+tqdm==4.65.0
+tweepy==4.14.0
+typing_extensions==4.7.1
+urllib3==2.0.4
+Werkzeug==2.3.6
