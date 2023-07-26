@@ -45,10 +45,10 @@ class SentimentAnalysis:
         #self.tweets = tweepy.Cursor(api.search_tweets, q=keyword, lang="en").items(tweets)
 
         # Open/create a file to append data to
-        csvFile = open('result.csv', 'a')
+        # csvFile = open('result.csv', 'a')
 
         # Use csv writer
-        csvWriter = csv.writer(csvFile)
+        # csvWriter = csv.writer(csvFile)
 
         # creating some variables to store info
         polarity = 0
@@ -93,8 +93,8 @@ class SentimentAnalysis:
                 snegative += 1
 
         # Write to csv and close csv file
-        csvWriter.writerow(self.tweetText)
-        csvFile.close()
+        # csvWriter.writerow(self.tweetText)
+        # csvFile.close()
 
         # finding average of how people are reacting
         positive = self.percentage(positive, tweets)
