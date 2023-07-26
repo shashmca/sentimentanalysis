@@ -176,9 +176,9 @@ class SentimentAnalysis:
         plt.legend(patches, labels, loc="best")
         plt.axis('equal')
         plt.tight_layout()
-        output_directory = "/Users/singhajy/PycharmProjects/ai_project/static/images"
+        output_directory = "static\\images\\"
         output_file = "plot1.png"
-        strFile = os.path.join(output_directory, output_file)
+        strFile = output_directory + output_file
         print("Saving plot to:", strFile)
         if os.path.isfile(strFile):
             print('File exists. Removing the old file...')
