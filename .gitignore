@@ -14,6 +14,8 @@ out
 .next
 
 # misc
+.idea
+__pycache__
 .DS_Store
 .eslintcache
 .idea
