@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  react-app:
+    build:
+      context: ./react  # Path to the directory containing the React app Dockerfile
+    ports:
+      - "3000:3000"  # Map host port 3000 to container port 3000
+    volumes:
+      - app-data:/app  # Mount a volume named "app-data" to share data between containers
+  python-app:
+    build:
+      context: ./ai_project  # Path to the directory containing the Python app Dockerfile
+    ports:
+      - "5000:5000"  # Map host port 5000 to container port 5000
+    volumes:
+      - /Users/shrivsha/Desktop/sentimentAnalysis/sentimentanalysis/app-data:/app  # Mount the same volume named "app-data" to share data between containers
+
+volumes:
+  app-data:  # Define the "app-data" volume

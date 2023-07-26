@@ -78,22 +78,12 @@ export const TopNav = (props) => {
           >
             <Tooltip title="Contacts">
               <IconButton>
-                <SvgIcon fontSize="small">
-                  <UsersIcon />
-                </SvgIcon>
+                
               </IconButton>
             </Tooltip>
             <Tooltip title="Notifications">
               <IconButton>
-                <Badge
-                  badgeContent={4}
-                  color="success"
-                  variant="dot"
-                >
-                  <SvgIcon fontSize="small">
-                    <BellIcon />
-                  </SvgIcon>
-                </Badge>
+               
               </IconButton>
             </Tooltip>
             <Avatar
