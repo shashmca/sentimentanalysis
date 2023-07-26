@@ -5,6 +5,7 @@ import { OverviewBudget } from 'src/sections/overview/overview-budget';
 import { OverviewSales } from 'src/sections/overview/overview-sales';
 import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
+import data from '../../../ai_project/output.json';
 
 const now = new Date();
 
@@ -79,9 +80,10 @@ const Page = () => (
             lg={4}
           >
             <OverviewTraffic
-              chartSeries={[63, 15, 22]}
-              labels={['Positive', 'Negative', 'Neutral']}
-              sx={{ height: '100%' }}
+              chartSeries={[parseInt(data.spositive), parseInt(data.positive), parseInt(data.wpositive), 
+                parseInt(data.snegative), parseInt(data.negative), parseInt(data.wnegative), parseInt(data.neutral)]}
+              labels={['Strongly Positive', 'Positive', 'Weakly Positive', 'Strongly Negative', 'Negative', 'Weakly Negative', 'Neutral']}
+              sx={{ height: '100%', width: '200%' }}
             />
           </Grid>
         </Grid>
