@@ -6,12 +6,15 @@ import { OverviewSales } from 'src/sections/overview/overview-sales';
 import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
 import data from '../../../ai_project/output.json';
+import { ChatBot } from 'src/components/chatbot';
 import reviews from '../../../react/Reviews.json';
+
 
 const now = new Date();
 
-const Page = () => (
-  <>
+const Page = () => {
+  return(
+    <>
     <Head>
       <title>
         Overview | Sentiment Analysis
@@ -98,9 +101,12 @@ const Page = () => (
           </Grid>
         </Grid>
       </Container>
+      {<ChatBot />}
     </Box>
   </>
-);
+  )
+ 
+};
 
 Page.getLayout = (page) => (
   <DashboardLayout>
