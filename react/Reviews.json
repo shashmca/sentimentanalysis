@@ -1,0 +1,79 @@
+{
+  "18-Jan-2023": {
+    "positive": "20.00",
+    "wpositive": "18.00",
+    "spositive": "14.00",
+    "negative": "2.00",
+    "wnegative": "7.00",
+    "snegative": "0.00",
+    "neutral": "39.00",
+    "keyword": "Adidas",
+    "tweets": 100
+  },
+  "22-Jan-2023": {
+    "positive": "30.00",
+    "wpositive": "13.00",
+    "spositive": "14.00",
+    "negative": "2.00",
+    "wnegative": "5.00",
+    "snegative": "2.00",
+    "neutral": "34.00",
+    "keyword": "Adidas",
+    "tweets": 100
+  },
+  "26-Jan-2023": {
+    "positive": "25.00",
+    "wpositive": "18.00",
+    "spositive": "17.00",
+    "negative": "2.00",
+    "wnegative": "3.00",
+    "snegative": "1.00",
+    "neutral": "34.00",
+    "keyword": "Adidas",
+    "tweets": 100
+  },
+  "30-Jan-2023": {
+    "positive": "27.00",
+    "wpositive": "18.00",
+    "spositive": "17.00",
+    "negative": "4.00",
+    "wnegative": "2.00",
+    "snegative": "2.00",
+    "neutral": "30.00",
+    "keyword": "Adidas",
+    "tweets": 100
+  },
+  "3-Feb-2023": {
+    "positive": "20.00",
+    "wpositive": "22.00",
+    "spositive": "20.00",
+    "negative": "5.00",
+    "wnegative": "5.00",
+    "snegative": "1.00",
+    "neutral": "27.00",
+    "keyword": "Adidas",
+    "tweets": 100
+  },
+  "7-Feb-2023": {
+    "positive": "14.00",
+    "wpositive": "27.00",
+    "spositive": "23.00",
+    "negative": "1.00",
+    "wnegative": "2.00",
+    "snegative": "3.00",
+    "neutral": "30.00",
+    "keyword": "Adidas",
+    "tweets": 100
+  },
+  "11-Feb-2023": {
+    "positive": "18.00",
+    "wpositive": "22.00",
+    "spositive": "30.00",
+    "negative": "1.00",
+    "wnegative": "1.00",
+    "snegative": "1.00",
+    "neutral": "27.00",
+    "keyword": "Adidas",
+    "tweets": 100
+  }
+}
