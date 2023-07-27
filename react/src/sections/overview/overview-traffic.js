@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import ComputerDesktopIcon from '@heroicons/react/24/solid/ComputerDesktopIcon';
 import DeviceTabletIcon from '@heroicons/react/24/solid/DeviceTabletIcon';
 import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
+import { purple } from "@mui/material/colors";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
   Box,
   Card,
@@ -15,7 +17,35 @@ import {
 import { Chart } from 'src/components/chart';
 
 const useChartOptions = (labels) => {
-  const theme = useTheme();
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#2a9461"
+      },
+      secondary: {
+        main: "#494c7d"
+      },
+      companyRed: {
+         main: '#E44D69',
+      },
+      companyBlue: {
+        main: '#2A9DF4',
+     },
+     companyYellow: {
+      main: '#FFDB58',
+    },
+   companyOrange: {
+    main: '#FFA500',
+    },
+    companySky: {
+      main: '#87CEEB',
+      },
+      accent: {
+        main: purple[100] // Or purple[100], purple[200]
+      }
+    }
+  });
+  
 
   return {
     chart: {
@@ -23,8 +53,12 @@ const useChartOptions = (labels) => {
     },
     colors: [
       theme.palette.primary.main,
-      theme.palette.success.main,
-      theme.palette.warning.main
+      theme.palette.accent.main,
+      theme.palette.secondary.main,
+      theme.palette.companyRed.main,
+      theme.palette.companyOrange.main,
+      theme.palette.companyYellow.main,
+      theme.palette.companySky.main
     ],
     dataLabels: {
       enabled: false
@@ -99,8 +133,8 @@ export const OverviewTraffic = (props) => {
           alignItems="center"
           direction="row"
           justifyContent="center"
-          spacing={2}
-          sx={{ mt: 2 }}
+          spacing={1.5}
+          sx={{ mt: 1 }}
         >
           {chartSeries.map((item, index) => {
             const label = labels[index];
