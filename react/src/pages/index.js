@@ -6,11 +6,13 @@ import { OverviewSales } from 'src/sections/overview/overview-sales';
 import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
 import data from '../../../ai_project/output.json';
+import { ChatBot } from 'src/components/chatbot';
 
 const now = new Date();
 
-const Page = () => (
-  <>
+const Page = () => {
+  return(
+    <>
     <Head>
       <title>
         Overview | Devias Kit
@@ -80,17 +82,20 @@ const Page = () => (
             lg={4}
           >
             <OverviewTraffic
-              chartSeries={[parseInt(data.spositive), parseInt(data.positive), parseInt(data.wpositive), 
-                parseInt(data.snegative), parseInt(data.negative), parseInt(data.wnegative), parseInt(data.neutral)]}
+              chartSeries={[parseFloat(data.spositive), parseFloat(data.positive), parseFloat(data.wpositive), 
+                parseFloat(data.snegative), parseFloat(data.negative), parseFloat(data.wnegative), parseFloat(data.neutral)]}
               labels={['Strongly Positive', 'Positive', 'Weakly Positive', 'Strongly Negative', 'Negative', 'Weakly Negative', 'Neutral']}
               sx={{ height: '100%', width: '200%' }}
             />
           </Grid>
         </Grid>
       </Container>
+      {<ChatBot />}
     </Box>
   </>
-);
+  )
+ 
+};
 
 Page.getLayout = (page) => (
   <DashboardLayout>
