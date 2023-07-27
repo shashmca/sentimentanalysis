@@ -5,15 +5,21 @@ FROM python:3.9
 WORKDIR /app
 
 # Copy the requirements.txt file to the container
-COPY requirements.txt .
+# Copy the necessary files
+COPY requirements.txt /app/
+COPY app.py /app/
+COPY templates/ /app/templates/
+COPY static/ /app/static/
 
 RUN pip install gunicorn
+RUN pip install flask
+RUN pip install textblob
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code to the container
-COPY . .
+COPY . /app/
 
 # Expose port 5000 to the host
 EXPOSE 5000
