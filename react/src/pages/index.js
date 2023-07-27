@@ -6,6 +6,7 @@ import { OverviewSales } from 'src/sections/overview/overview-sales';
 import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
 import data from '../../../ai_project/output.json';
+import data1 from '../../../ai_project/output1.json';
 import { ChatBot } from 'src/components/chatbot';
 import reviews from '../../../react/Reviews.json';
 
@@ -55,46 +56,53 @@ const Page = () => {
               chartSeries={[
                 {
                   name: 'Strongly Positive',
-                  data: [parseInt(reviews["18-Jan-2023"].spositive),parseInt(reviews["22-Jan-2023"].spositive),parseInt(reviews["26-Jan-2023"].spositive), 
-                         parseInt(reviews["30-Jan-2023"].spositive), parseInt(reviews["3-Feb-2023"].spositive), parseInt(reviews["7-Feb-2023"].spositive), 
-                         parseInt(reviews["11-Feb-2023"].spositive),0,0,0]
+                  data: Object.values(data1).map((d) => d.spositive)
+                  // data: [parseInt(reviews["18-Jan-2023"].spositive),parseInt(reviews["22-Jan-2023"].spositive),parseInt(reviews["26-Jan-2023"].spositive), 
+                  //        parseInt(reviews["30-Jan-2023"].spositive), parseInt(reviews["3-Feb-2023"].spositive), parseInt(reviews["7-Feb-2023"].spositive), 
+                  //        parseInt(reviews["11-Feb-2023"].spositive),0,0,0]
                 },
                 {
                   name: 'Positive',
-                  data: [parseInt(reviews["18-Jan-2023"].positive),parseInt(reviews["22-Jan-2023"].positive),parseInt(reviews["26-Jan-2023"].positive), 
-                         parseInt(reviews["30-Jan-2023"].positive), parseInt(reviews["3-Feb-2023"].positive), parseInt(reviews["7-Feb-2023"].positive), 
-                         parseInt(reviews["11-Feb-2023"].positive)]
+                  data: Object.values(data1).map((d) => d.positive)
+                  // data: [parseInt(reviews["18-Jan-2023"].positive),parseInt(reviews["22-Jan-2023"].positive),parseInt(reviews["26-Jan-2023"].positive), 
+                  //        parseInt(reviews["30-Jan-2023"].positive), parseInt(reviews["3-Feb-2023"].positive), parseInt(reviews["7-Feb-2023"].positive), 
+                  //        parseInt(reviews["11-Feb-2023"].positive)]
                 },
                 {
                   name: 'Weakly Positive',
-                  data: [parseInt(reviews["18-Jan-2023"].wpositive),parseInt(reviews["22-Jan-2023"].wpositive),parseInt(reviews["26-Jan-2023"].wpositive), 
-                         parseInt(reviews["30-Jan-2023"].wpositive), parseInt(reviews["3-Feb-2023"].wpositive), parseInt(reviews["7-Feb-2023"].wpositive), 
-                         parseInt(reviews["11-Feb-2023"].wpositive)]
+                  data: Object.values(data1).map((d) => d.wpositive)
+                  // data: [parseInt(reviews["18-Jan-2023"].wpositive),parseInt(reviews["22-Jan-2023"].wpositive),parseInt(reviews["26-Jan-2023"].wpositive), 
+                  //        parseInt(reviews["30-Jan-2023"].wpositive), parseInt(reviews["3-Feb-2023"].wpositive), parseInt(reviews["7-Feb-2023"].wpositive), 
+                  //        parseInt(reviews["11-Feb-2023"].wpositive)]
                 },
 
                 {
                   name: 'Strongly Negative',
-                  data: [parseInt(reviews["18-Jan-2023"].snegative),parseInt(reviews["22-Jan-2023"].snegative),parseInt(reviews["26-Jan-2023"].snegative), 
-                         parseInt(reviews["30-Jan-2023"].snegative), parseInt(reviews["3-Feb-2023"].snegative), parseInt(reviews["7-Feb-2023"].snegative), 
-                         parseInt(reviews["11-Feb-2023"].snegative)]
+                  data: Object.values(data1).map((d) => d.snegative)
+                  // data: [parseInt(reviews["18-Jan-2023"].snegative),parseInt(reviews["22-Jan-2023"].snegative),parseInt(reviews["26-Jan-2023"].snegative), 
+                  //        parseInt(reviews["30-Jan-2023"].snegative), parseInt(reviews["3-Feb-2023"].snegative), parseInt(reviews["7-Feb-2023"].snegative), 
+                  //        parseInt(reviews["11-Feb-2023"].snegative)]
                 },
                 {
                   name: 'Negative',
-                  data: [parseInt(reviews["18-Jan-2023"].negative),parseInt(reviews["22-Jan-2023"].negative),parseInt(reviews["26-Jan-2023"].negative), 
-                         parseInt(reviews["30-Jan-2023"].negative), parseInt(reviews["3-Feb-2023"].negative), parseInt(reviews["7-Feb-2023"].negative), 
-                         parseInt(reviews["11-Feb-2023"].negative)]
+                  data: Object.values(data1).map((d) => d.negative)
+                  // data: [parseInt(reviews["18-Jan-2023"].negative),parseInt(reviews["22-Jan-2023"].negative),parseInt(reviews["26-Jan-2023"].negative), 
+                  //        parseInt(reviews["30-Jan-2023"].negative), parseInt(reviews["3-Feb-2023"].negative), parseInt(reviews["7-Feb-2023"].negative), 
+                  //        parseInt(reviews["11-Feb-2023"].negative)]
                 },
                 {
                   name: 'Weakly Negative',
-                  data: [parseInt(reviews["18-Jan-2023"].wnegative),parseInt(reviews["22-Jan-2023"].wnegative),parseInt(reviews["26-Jan-2023"].wnegative), 
-                        parseInt(reviews["30-Jan-2023"].wnegative), parseInt(reviews["3-Feb-2023"].wnegative), parseInt(reviews["7-Feb-2023"].wnegative), 
-                        parseInt(reviews["11-Feb-2023"].wnegative)]
+                  data: Object.values(data1).map((d) => d.wnegative)
+                  // data: [parseInt(reviews["18-Jan-2023"].wnegative),parseInt(reviews["22-Jan-2023"].wnegative),parseInt(reviews["26-Jan-2023"].wnegative), 
+                  //       parseInt(reviews["30-Jan-2023"].wnegative), parseInt(reviews["3-Feb-2023"].wnegative), parseInt(reviews["7-Feb-2023"].wnegative), 
+                  //       parseInt(reviews["11-Feb-2023"].wnegative)]
                 },
                 {
                   name: 'Neutral',
-                  data: [parseInt(reviews["18-Jan-2023"].neutral),parseInt(reviews["22-Jan-2023"].neutral),parseInt(reviews["26-Jan-2023"].neutral), 
-                        parseInt(reviews["30-Jan-2023"].neutral), parseInt(reviews["3-Feb-2023"].neutral), parseInt(reviews["7-Feb-2023"].neutral), 
-                        parseInt(reviews["11-Feb-2023"].neutral)]
+                  data: Object.values(data1).map((d) => d.neutral)
+                  // data: [parseInt(reviews["18-Jan-2023"].neutral),parseInt(reviews["22-Jan-2023"].neutral),parseInt(reviews["26-Jan-2023"].neutral), 
+                  //       parseInt(reviews["30-Jan-2023"].neutral), parseInt(reviews["3-Feb-2023"].neutral), parseInt(reviews["7-Feb-2023"].neutral), 
+                  //       parseInt(reviews["11-Feb-2023"].neutral)]
                 }
               ]}
               sx={{ height: '100%',width: '170%' }}

@@ -7,7 +7,7 @@ export const ChatBot = (props) => {
     const [reply, updateReply] = useState('');
     const config = new Configuration({
         organization: 'org-aRAe4TSpaU6a8nky8YGtInFC',
-        apiKey: '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'
+        apiKey: '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'
     });
     delete config.baseOptions.headers['User-Agent'];
     const openai = new OpenAIApi(config);

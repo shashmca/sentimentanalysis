@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { Chart } from 'src/components/chart';
+import data from '../../../../ai_project/output1.json';
 
 const useChartOptions = () => {
   const theme = createTheme({
@@ -109,15 +110,16 @@ const useChartOptions = () => {
         color: theme.palette.divider,
         show: true
       },
-      categories: [
-        '18 Jan',
-        '22 Jan',
-        '26 Jan',
-        '30 Jan',
-        '3 Feb',
-        '7 Feb',
-        '11 Feb'
-      ],
+      categories: Object.keys(data),
+      // categories: [
+      //   '18 Jan',
+      //   '22 Jan',
+      //   '26 Jan',
+      //   '30 Jan',
+      //   '3 Feb',
+      //   '7 Feb',
+      //   '11 Feb'
+      // ],
       labels: {
         offsetY: 5,
         style: {
