@@ -50,7 +50,7 @@ export const ChatBot = (props) => {
         <Card sx={props.sx}>
             <CardHeader title="AI Suggestions" />
             <CardContent>
-                {reply!='' && reply}
+                <div dangerouslySetInnerHTML={{__html: reply}} style={{whiteSpace: 'pre-wrap'}}></div>
             </CardContent>
         </Card>
     );
