@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import ArrowPathIcon from '@heroicons/react/24/solid/ArrowPathIcon';
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
+import { purple } from "@mui/material/colors";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
   Button,
   Card,
@@ -14,7 +16,35 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { Chart } from 'src/components/chart';
 
 const useChartOptions = () => {
-  const theme = useTheme();
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#2a9461"
+      },
+      secondary: {
+        main: "#494c7d"
+      },
+      companyRed: {
+         main: '#E44D69',
+      },
+      companyBlue: {
+        main: '#2A9DF4',
+     },
+     companyYellow: {
+      main: '#FFDB58',
+    },
+   companyOrange: {
+    main: '#FFA500',
+    },
+    companySky: {
+      main: '#87CEEB',
+      },
+      accent: {
+        main: purple[100] // Or purple[100], purple[200]
+      }
+    }
+  });
+  
 
   return {
     chart: {
@@ -24,7 +54,15 @@ const useChartOptions = () => {
         show: false
       }
     },
-    colors: [theme.palette.primary.main, alpha(theme.palette.primary.main, 0.25)],
+    colors: [
+      theme.palette.primary.main,
+      theme.palette.accent.main,
+      theme.palette.secondary.main,
+      theme.palette.companyRed.main,
+      theme.palette.companyOrange.main,
+      theme.palette.companyYellow.main,
+      theme.palette.companySky.main
+    ],
     dataLabels: {
       enabled: false
     },
@@ -78,9 +116,7 @@ const useChartOptions = () => {
         '30 Jan',
         '3 Feb',
         '7 Feb',
-        '11 Feb',
-        '15 Feb',
-        '19 Feb'
+        '11 Feb'
       ],
       labels: {
         offsetY: 5,
@@ -108,43 +144,19 @@ export const OverviewSales = (props) => {
   return (
     <Card sx={sx}>
       <CardHeader
-        action={(
-          <Button
-            color="inherit"
-            size="small"
-            startIcon={(
-              <SvgIcon fontSize="small">
-                <ArrowPathIcon />
-              </SvgIcon>
-            )}
-          >
-            Sync
-          </Button>
-        )}
         title="Sentiment Timeline"
       />
       <CardContent>
         <Chart
-          height={350}
+          height={450}
           options={chartOptions}
           series={chartSeries}
           type="bar"
-          width="100%"
+          width="130%"
         />
       </CardContent>
       <Divider />
       <CardActions sx={{ justifyContent: 'flex-end' }}>
-        <Button
-          color="inherit"
-          endIcon={(
-            <SvgIcon fontSize="small">
-              <ArrowRightIcon />
-            </SvgIcon>
-          )}
-          size="small"
-        >
-          Overview
-        </Button>
       </CardActions>
     </Card>
   );

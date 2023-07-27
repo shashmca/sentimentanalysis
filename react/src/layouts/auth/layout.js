@@ -49,7 +49,6 @@ export const Layout = (props) => {
                 width: 32
               }}
             >
-              <Logo />
             </Box>
           </Box>
           {children}
@@ -68,36 +67,21 @@ export const Layout = (props) => {
             }
           }}
         >
-          <Box sx={{ p: 3 }}>
-            <Typography
-              align="center"
-              color="inherit"
-              sx={{
-                fontSize: '24px',
-                lineHeight: '32px',
-                mb: 1
-              }}
-              variant="h1"
-            >
-              Welcome to{' '}
-              <Box
-                component="a"
-                sx={{ color: '#15B79E' }}
-                target="_blank"
-              >
-                Devias Kit
-              </Box>
-            </Typography>
+          <Box 
+          sx={{ 
+            height: 500,
+            width: 500}}>
+            
             <Typography
               align="center"
               sx={{ mb: 3 }}
               variant="subtitle1"
             >
-              A professional kit that comes with ready-to-use MUI components.
+              A dashboard for analysing sentiments from user reviews.
             </Typography>
             <img
               alt=""
-              src="/assets/auth-illustration.svg"
+              src="/assets/reviews.png"
             />
           </Box>
         </Grid>
