@@ -13,6 +13,7 @@ import reviews from '../../../react/Reviews.json';
 const now = new Date();
 
 const Page = () => {
+  console.log(' Page rendering');
   return(
     <>
     <Head>
@@ -35,14 +36,14 @@ const Page = () => {
         >
              <Grid
             xs={12}
-            lg={8}
+            lg={7}
           >
             <OverviewTraffic
               chartSeries={[parseInt(data.spositive), parseInt(data.positive), parseInt(data.wpositive), 
                 parseInt(data.snegative), parseInt(data.negative), parseInt(data.wnegative), parseInt(data.neutral)]
               }
               labels={['Strongly Positive', 'Positive', 'Weakly Positive', 'Strongly Negative', 'Negative', 'Weakly Negative', 'Neutral']}
-              sx={{ height: '100%', width: '130%' }}
+              sx={{ height: '100%', width: '170%' }}
             />
           </Grid>
 
@@ -99,19 +100,26 @@ const Page = () => {
               sx={{ height: '100%',width: '170%' }}
             />
           </Grid>
+          <Grid
+            xs={12}
+            lg={7}
+          >
+            <ChatBot input="Hey" sx={{ height: '100%', width: '170%' }}/>
+          </Grid>
         </Grid>
       </Container>
-      {<ChatBot />}
     </Box>
   </>
   )
  
 };
 
-Page.getLayout = (page) => (
+Page.getLayout = (page) => {
+  console.log('inside getlayout')
+  return (
   <DashboardLayout>
     {page}
   </DashboardLayout>
-);
+)};
 
 export default Page;
