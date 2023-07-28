@@ -4,8 +4,6 @@ import tweepy, csv, re
 from textblob import TextBlob
 import matplotlib
 import pandas as pd
-from datetime import timedelta
-import random
 
 matplotlib.use('agg')
 
@@ -153,22 +151,6 @@ class SentimentAnalysis:
 
     def save_to_json(positive, wpositive, spositive, negative, wnegative, snegative, neutral,
                      keyword, tweets):
-
-      # output = {
-      #   "data": {
-      #     "positive": positive,
-      #     "wpositive": wpositive,
-      #     "spositive": spositive,
-      #     "negative": negative,
-      #     "wnegative": wnegative,
-      #     "snegative": snegative,
-      #     "neutral": neutral,
-      #     "keyword": keyword,
-      #     "tweets": tweets},
-      #   "grouped": {
-      #     "week": ,
-      #   }
-      #           }
       data = {
         "positive": positive,
         "wpositive": wpositive,
@@ -186,8 +168,6 @@ class SentimentAnalysis:
 
     save_to_json(positive, wpositive, spositive, negative, wnegative, snegative, neutral, keyword,
                  tweets)
-
-    print(self.tweetDays)
 
     dates = [pd.to_datetime(key.split('T')[0]) for key in self.tweetDays.keys()]
     positives = [key['positive'] for key in self.tweetDays.values()]
@@ -209,36 +189,10 @@ class SentimentAnalysis:
       "neutral": neutrals
     })
 
-    # # df['date'] = pd.to_datetime(df['date']) - pd.to_timedelta(7, unit='d')
-    #
-    # # start_date = pd.to_datetime(df['date'][99])
-    # # end_date = pd.to_datetime(df['date'][0])
-    # num_days = 100
-    #
-    # data = {
-    #   'date': df['date'],
-    #   'value': [random.randint(1, 100) for _ in range(num_days)]
-    # }
-
-    # df = pd.DataFrame(data)
-    # print(df)
-
     df['week'] = df['date'].dt.to_period("W-MON")
     grouped_df = df.groupby('week')[['positive', 'wpositive', 'spositive', 'negative', 'wnegative', 'snegative', 'neutral']].sum()
     grouped_df = grouped_df.transpose()
-
-    jsonF = grouped_df.to_json("output1.json")
-
-    # df = pd.DataFrame(data=self.tweetDays).transpose().reset_index()
-    # df = pd.DataFrame.from_dict(data=self.tweetDays, orient='index').reset_index()
-    # df = pd.DataFrame(data=self.tweetDays).transpose()
-    # df = pd.DataFrame.from_dict(self.tweetDays)
-    # df.columns = ['date', 'positive', 'wpositive', 'spositive', 'negative', 'wnegative', 'snegative', 'neutral']
-    # df = pd.DataFrame
-    # df = pd.DataFrame.from_dict(self.tweetDays, orient='index', columns=['date', 'positive', 'wpositive', 'spositive', 'negative', 'wnegative', 'snegative', 'neutral']).reset_index()
-    # df.groupby([pd.Grouper(key='date', freq='W')])[['positive', 'positive', 'wpositive', 'spositive', 'negative', 'wnegative', 'snegative', 'neutral']].sum()
-
-    # print(df)
+    grouped_df.to_json("output1.json")
 
     self.plotPieChart(positive, wpositive, spositive, negative, wnegative, snegative, neutral,
                       keyword, tweets)
@@ -257,7 +211,6 @@ class SentimentAnalysis:
 
   def plotPieChart(self, positive, wpositive, spositive, negative, wnegative, snegative, neutral,
                    keyword, tweets):
-    # fig = plt.figure()
     labels = ['Positive [' + str(positive) + '%]', 'Weakly Positive [' + str(wpositive) + '%]',
               'Strongly Positive [' + str(spositive) + '%]', 'Neutral [' + str(neutral) + '%]',
               'Negative [' + str(negative) + '%]', 'Weakly Negative [' + str(wnegative) + '%]',
