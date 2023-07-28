@@ -26,12 +26,12 @@ const Page = () => {
       component="main"
       sx={{
         flexGrow: 1,
-        py: 8
+        py: 3
       }}
     >
       <Container maxWidth="xl">
         <Grid
-          fluid style={{ paddingLeft: 110}}
+          fluid style={{ margin: 'auto' }}
           container
           spacing={3}
         >
@@ -40,11 +40,11 @@ const Page = () => {
             lg={7}
           >
             <OverviewTraffic
-              chartSeries={[parseInt(data.spositive), parseInt(data.positive), parseInt(data.wpositive), 
-                parseInt(data.snegative), parseInt(data.negative), parseInt(data.wnegative), parseInt(data.neutral)]
+              chartSeries={[parseFloat(data.spositive), parseFloat(data.positive), parseFloat(data.wpositive), 
+                parseFloat(data.snegative), parseFloat(data.negative), parseFloat(data.wnegative), parseFloat(data.neutral)]
               }
               labels={['Strongly Positive', 'Positive', 'Weakly Positive', 'Strongly Negative', 'Negative', 'Weakly Negative', 'Neutral']}
-              sx={{ height: '100%', width: '170%' }}
+              sx={{ height: '100%', width: '175%' }}
             />
           </Grid>
 
@@ -105,14 +105,14 @@ const Page = () => {
                   //       parseInt(reviews["11-Feb-2023"].neutral)]
                 }
               ]}
-              sx={{ height: '100%',width: '170%' }}
+              sx={{ height: '100%', width: '175%' }}
             />
           </Grid>
           <Grid
             xs={12}
             lg={7}
           >
-            <ChatBot input="Hey" sx={{ height: '100%', width: '170%' }}/>
+            <ChatBot input="Hey" sx={{ height: '100%', width: '175%', 'overflow-y': 'auto' }}/>
           </Grid>
         </Grid>
       </Container>

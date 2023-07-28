@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 export const ChatBot = (props) => {
     const [reply, updateReply] = useState('');
     const config = new Configuration({
-        organization: 'org-aRAe4TSpaU6a8nky8YGtInFC',
-        apiKey: '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'
+        organization: `${process.env.NEXT_PUBLIC_OPENAI_MY_ORG}`,
+        apiKey: `${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`
     });
     delete config.baseOptions.headers['User-Agent'];
     const openai = new OpenAIApi(config);

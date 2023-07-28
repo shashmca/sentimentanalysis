@@ -26,19 +26,19 @@ const useChartOptions = (labels) => {
         main: "#494c7d"
       },
       companyRed: {
-         main: '#E44D69',
+        main: '#E44D69',
       },
       companyBlue: {
         main: '#2A9DF4',
-     },
-     companyYellow: {
-      main: '#FFDB58',
-    },
-   companyOrange: {
-    main: '#FFA500',
-    },
-    companySky: {
-      main: '#87CEEB',
+      },
+      companyYellow: {
+        main: '#FFDB58',
+      },
+      companyOrange: {
+        main: '#FFA500',
+      },
+      companySky: {
+        main: '#87CEEB',
       },
       accent: {
         main: purple[100] // Or purple[100], purple[200]
@@ -61,7 +61,7 @@ const useChartOptions = (labels) => {
       theme.palette.companySky.main
     ],
     dataLabels: {
-      enabled: false
+      enabled: true
     },
     labels,
     legend: {
@@ -132,9 +132,9 @@ export const OverviewTraffic = (props) => {
         <Stack
           alignItems="center"
           direction="row"
-          justifyContent="center"
+          justifyContent="space-evenly"
           spacing={1.5}
-          sx={{ mt: 1 }}
+          sx={{ mt: 1, my: 3}}
         >
           {chartSeries.map((item, index) => {
             const label = labels[index];

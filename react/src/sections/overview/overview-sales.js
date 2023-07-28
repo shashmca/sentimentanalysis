@@ -148,7 +148,7 @@ export const OverviewSales = (props) => {
       <CardHeader
         title="Sentiment Timeline"
       />
-      <CardContent>
+      <CardContent style={{'overflow-x': 'auto'}}>
         <Chart
           height={450}
           options={chartOptions}
